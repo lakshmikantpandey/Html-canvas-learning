@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lib/fabric.min.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <title>Canvas Tutorial</title>
+</head>
+<body>
+    <canvas style="border: 1px solid black;" id="canvas" width="700" height="400"></canvas>
+    <!-- <canvas id="canvas" width="300" height="300"></canvas> -->
+    <!-- <div style="display:none;">
+        <img id="source" src="frame.png" width="300" height="227" /> -->
+    <!-- <img id="frame" src="frame.png" width="300" height="227" /> -->
+    <!-- </div>
+    <button class="btn btn-primary" onclick="draw()">Click me</button> -->
+</body>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image();
+    image.src = "frame.png";
+    image.addEventListener("load", () => {
+        // ctx.drawImage(image, 100, 300, 100, 100);
+        // ctx.drawImage(image, 5, 5,100, 100);
+        ctx.drawImage(image, 5, 5,350,350);
+        // ctx.drawImage(image, 50, 50,65,65);
+        // ctx.drawImage(image, 0, 50,65,65);
+        ctx.drawImage(image, 20, 20, 100,100);
+        const imageData = ctx.getImageData(0, 0, 40, 200);
+        // ctx.putImageData(imageData, 260, 0);
+        // ctx.putImageData(imageData, 380, 50);
+        // ctx.putImageData(imageData, 300, 100);
+    });
+
+    // const imagesData = {
+    //     "images": [
+    //         { "path": "frame", "pos": "logo" },
+    //         { "path": "source", "pos": "address" },
+    //     ]
+    // };
+
+    // const canvas = document.getElementById("canvas");
+    // const ctx = canvas.getContext("2d");
+
+    // const image = new Image();
+    // image.src = "frame.png";
+    // image.addEventListener("load", () => {
+    //     ctx.drawImage(image, 0, 0, 233, 320);
+
+    //     const imageData = ctx.getImageData(10, 20, 80, 230);
+    //     ctx.putImageData(imageData, 260, 0);
+    //     ctx.putImageData(imageData, 380, 50);
+    //     ctx.putImageData(imageData, 500, 100);
+    // });
+
+
+    // function draw() {
+    //     console.log({imagesData});
+    //     const canvas = document.getElementById("canvas");
+    //     const ctx = canvas.getContext("2d");
+
+    //     for (const images of imagesData.images) {
+    //         ctx.drawImage(document.getElementById(images.path), images.pos.x, images.pos.y)
+    //     }
+
+    //     // for (const img of imagesData.images) {
+    //     //     ctx.drawImage(document.getElementById(img.path),img.pos.x,img.pos.y)
+    //     // }
+    //     // ctx.drawImage(
+    //     //     document.getElementById("source"),
+    //     //     33,71,104,124,21,20,87,104
+    //     // );
+    //     // ctx.drawImage(document.getElementById("frame"), 0, 0);
+    // }
+
+</script>
+
+</html>
